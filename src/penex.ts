@@ -9,7 +9,6 @@ const defaultLayout = `
     `
 
 function setup(app: string, layout: string = defaultLayout, components?: Components) {
-    // stfu idc
     document.body.innerHTML = layout + document.body.innerHTML
 
     let mainApp = document.getElementById(app)

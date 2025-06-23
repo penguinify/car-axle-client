@@ -1,6 +1,7 @@
 import { Component, Elements, Pen } from '../../penexutils'
 import { Content, HandlerDefinition } from '../../types'
 import { Block } from './content/block.component'
+import { Condition } from './content/condition.component'
 import { Iframe } from './content/iframe.component'
 import { Input } from './content/input.component'
 import { Module } from './content/module.component'

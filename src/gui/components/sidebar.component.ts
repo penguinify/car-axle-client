@@ -4,6 +4,7 @@ import json from '../../assets/sections.json'
 import { SidebarButton } from './sidebarbutton.component'
 import { SidebarBackground } from './sidebarbackground.component'
 import { MainContent } from './maincontent.component'
+import { Section } from '../../types'
 
 function setSection(section: string, sidebar_background: SidebarBackground) {
     sidebar_background.section = section
@@ -14,7 +15,7 @@ export class Sidebar implements Component {
     private buttons: Pen<HTMLElement>[] = []
     private sidebar_background!: SidebarBackground
 
-    constructor() {}
+    constructor() { }
 
     public bindContent(content: MainContent[]) {
         for (let i = 0; i < this.buttons.length; i++) {
@@ -55,7 +56,7 @@ export class Sidebar implements Component {
             this.buttons.push(dev_pen[0])
         }
 
-        json.forEach((section: any) => {
+        json.forEach((section: Section) => {
             let section_button = new SidebarButton(section.display_name, section.icon)
 
             let section_pen: Pen<HTMLElement>[] = section_button.penIt()

@@ -1,10 +1,17 @@
 import { Component, Pen } from '../../penexutils'
 import '../../styles/notification.less'
+import { ENV, ITERATION, NAME, VERSION } from '../../constants'
 
 export class NotificationBar implements Component {
     notificationbar!: Pen<HTMLElement>
 
-    constructor() {}
+    constructor() { }
+
+    private showQuote() {
+        console.info('car axle client started')
+        let quotes = require('../../assets/quotes.json')
+        this.showNotification(`${quotes[Math.floor(Math.random() * quotes.length)]}`, `v${VERSION}.${ITERATION} by penguinify. enjoy your stay ;)`)
+    }
 
     public penIt(): Pen<HTMLElement>[] {
         let pens = Pen.fromHTML(`
@@ -13,6 +20,8 @@ export class NotificationBar implements Component {
         `)
 
         this.notificationbar = pens[0]
+
+        this.showQuote()
 
         return pens
     }

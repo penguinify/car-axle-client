@@ -30,6 +30,10 @@ export type Content =
           handler: string // what it says up there
           placeholder?: string
       }
+    | {
+          type: 'condition'
+          handler: string
+      }
 
 export type HandlerOutput = void | Pen<Elements>[]
 
@@ -61,6 +65,11 @@ export type HandlerDefinition =
           id: string
           handler: (input: string, input_element: Pen<Elements>) => HandlerOutput
       }
+    | {
+          type: 'condition'
+          id: string
+          handler: () => void
+      }
 
 // database types
 export type Script = {
@@ -83,4 +92,17 @@ export type Proxies = {
 
 export type DropdownOptions = {
     [key: string]: string[]
+}
+
+export type Section = {
+    id: string
+    display_name: string
+    description: string
+    icon: string
+    default?: boolean
+}
+
+export type Message = {
+    user: string
+    message: string
 }

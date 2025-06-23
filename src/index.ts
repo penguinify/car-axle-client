@@ -1,8 +1,4 @@
-// welcome to nextgen
-// have fun ;)
-// ~ penguinify
-// jk ik u wont have fun
-
+// nextgen
 import { VERSION, ITERATION, NAME, CREATOR, ENV } from './constants'
 import { setup } from './penex'
 import './styles/sidebar.less'
@@ -15,10 +11,7 @@ import { layout } from './gui/layout'
 import { components, notificationbar } from './gui/app'
 import { DeviceType } from './penexutils'
 
-console.log(DeviceType)
-
-// checks if car axle already exists
-
+// checks if car axle already exists so we dont have multiple instances
 // @ts-ignore
 if (window.caraxle) {
     console.error('car axle is already running, exiting...')
@@ -38,18 +31,12 @@ function main() {
 
     setup('app-fuk-u', layout, components)
 
-    // obviously the update checker
     checkForUpdate().then((update: boolean) => {
         if (update) {
             console.warn('Client outdated, please install the latest version!')
             notificationbar.showNotification("You're on an outdated version!", `Update to the latest version. (Currently on v${VERSION}.${ITERATION})`)
         }
     })
-
-    let quotes = require('./assets/quotes.json')
-
-    notificationbar.showNotification(`${quotes[Math.floor(Math.random() * quotes.length)]}`, `v${VERSION}.${ITERATION} by penguinify. enjoy your stay ;)`)
 }
 
-// i hope this works...
 main()

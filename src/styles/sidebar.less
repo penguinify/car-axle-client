@@ -16,7 +16,7 @@
 }
 
 .cac-header {
-    background: url('https://raw.githubusercontent.com/car-axle-client/car-axle-client/main/docs/v11logo%20sadly.svg');
+    background: url('https://raw.githubusercontent.com/car-axle-client/car-axle-client/main/docs/allinone.svg');
     background-size: cover;
     width: 16.5vw;
     aspect-ratio: 5/2;
@@ -72,7 +72,9 @@
     z-index: 1000000000000000000000000000000000000000000000000000000000000;
     position: absolute;
     border-radius: 0.75vw;
-    animation: slide-in-blurred-left 3s cubic-bezier(0.33, 1, 0.32, 1) both;
+    opacity: 0;
+    animation: slide-in-blurred-left 1s cubic-bezier(0.33, 1, 0.32, 1) both;
+    animation-delay: 0.5s;
 }
 
 @media (aspect-ratio < 1/1) {

@@ -29,6 +29,9 @@ module.exports = {
         port: 6969,
         open: true,
         hot: true,
+        client: {
+            overlay: false,
+        },
     },
     output: {
         filename: 'index.js', // Output bundle filename

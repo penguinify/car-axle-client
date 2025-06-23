@@ -6,10 +6,6 @@ import { Elements, Pen } from '../../penexutils'
 import { Game, HandlerDefinition } from '../../types'
 
 function changeGame(url: string) {
-    if (GAMESLINK.currentLink === GAMESLINK.defaultLink) {
-        notificationbar.showNotification('Change the game link!', 'You are using the default game link, please change it to a working one')
-    }
-
     ;(document.getElementById('gamesiframe') as HTMLIFrameElement).src = atob(GAMESLINK.currentLink) + url
 }
 

@@ -14,7 +14,7 @@ function Block(content: Pen<HTMLElement>[]): Pen<HTMLElement>[] {
                            <h3>made with no love by penguinify</h3>
                            </div>`)
 
-    content[0].element.style.backgroundImage = "url('https://raw.githubusercontent.com/car-axle-client/car-axle-client/main/docs/v11logo%20sadly.svg')"
+    content[0].element.style.backgroundImage = "url('https://raw.githubusercontent.com/car-axle-client/car-axle-client/main/docs/allinone.svg')"
 
     pen[0].setParent(content[0].element)
     return pen || []
